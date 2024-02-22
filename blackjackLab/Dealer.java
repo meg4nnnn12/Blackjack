@@ -8,19 +8,16 @@ import java.util.Collections;
 
 public class Dealer extends Player{
 	public static final int NUMCARDS = 52;
-	private int topCardIndex;
-	private ArrayList<BlackJackCard> stackOfCards; //define a deck of cards
+	//private int topCardIndex;
+	private Deck stackOfCards; //define a deck of cards
 
 	public Dealer(){
-		topCardIndex = 51; //initialize data - stackOfCards - topCardIndex
-		stackOfCards = new ArrayList<>();
+		//topCardIndex = 51; //initialize data -> stackOfCards - topCardIndex
+		stackOfCards = new Deck();
 	}
 
 	public void shuffle(){   //shuffle the deck
-	   if (topCardIndex < 26){  //if the deck is halfway through
-			Collections.shuffle(stackOfCards);  //shuffle the deck
-			topCardIndex = 51;
-		}
+		stackOfCards.shuffle();
 	}
 
 	public BlackJackCard deal(){
@@ -32,7 +29,7 @@ public class Dealer extends Player{
 	}
 
 	public boolean hit(){
-	   return false;
+		return false;
     }
 }
 

@@ -7,8 +7,7 @@
 import static java.lang.System.*;
 import java.awt.Color;
 
-public class DealerTestOne
-{
+public class DealerTestOne{
 	public static void main( String args[] )
 	{
 		//Code to test the Dealer

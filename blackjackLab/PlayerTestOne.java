@@ -7,8 +7,7 @@
 import static java.lang.System.*;
 import java.awt.Color;
 
-public class PlayerTestOne
-{
+public class PlayerTestOne{
 	public static void main( String args[] )
 	{
 		Player player = new Player();	

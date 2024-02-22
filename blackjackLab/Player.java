@@ -5,8 +5,7 @@
 
 import java.util.*;
 
-public class Player
-{
+public class Player{
    private ArrayList<BlackJackCard> hand;
    // private int winCount;
    // private int total = 0;
@@ -24,16 +23,12 @@ public class Player
    }
 
    public void resetHand(){
-
+      hand.clear();
    }
 
    public void setWinCount(int numwins){
 
    }
-
-   // public int getWinCount(){
-   //    return 0; 
-   // }
 
    public int getHandSize(){
       return hand.size(); 
