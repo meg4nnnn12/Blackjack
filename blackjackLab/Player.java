@@ -1,0 +1,62 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+//Name - Megan Cheng
+//Date -
+
+import java.util.*;
+
+public class Player
+{
+   private ArrayList<BlackJackCard> hand;
+   // private int winCount;
+   // private int total = 0;
+
+   public Player(){
+
+   }
+
+   public Player (int money){
+      hand = new ArrayList<BlackJackCard>();  //creates array list of cards
+   }
+
+   public void addCardToHand(BlackJackCard temp){  //add temp card to the array list
+      hand.add(temp);
+   }
+
+   public void resetHand(){
+
+   }
+
+   public void setWinCount(int numwins){
+
+   }
+
+   // public int getWinCount(){
+   //    return 0; 
+   // }
+
+   public int getHandSize(){
+      return hand.size(); 
+   }
+
+   public int getHandValue(){  //returns value of cards in hand
+      int total = 0;
+      int aceCount = 0;
+      for (BlackJackCard myCard : hand){
+         total += myCard.getValue();
+         if (myCard.getValue() == 11){
+            aceCount++;
+         }
+      }
+      System.out.println("Total = " + total);
+      return total;
+   }
+
+   public boolean hit(){
+      return false;
+   }
+
+   public String toString(){
+      return "";
+   }
+}
