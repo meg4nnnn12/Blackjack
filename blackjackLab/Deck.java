@@ -35,7 +35,8 @@ public class Deck{
 	}
 
 	public int numCardsLeft(){
-		return (stackOfCards.size() - topCardIndex);
+		//return (stackOfCards.size() - topCardIndex);
+		return (topCardIndex + 1);
 	}
 
 	public BlackJackCard nextCard(){

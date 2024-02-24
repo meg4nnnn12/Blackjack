@@ -10,11 +10,22 @@ public class BlackJack
 {
 	//add in Player instance variable
 	//add in Dealer instance variable
+<<<<<<< Updated upstream
+=======
+
+	public BlackJack(){
+	}
+
+>>>>>>> Stashed changes
 	public static void main(String[] args){
 		BlackJack game = new BlackJack();
 		game.playGame();
 	}
+<<<<<<< Updated upstream
 
+=======
+	
+>>>>>>> Stashed changes
 	public void playGame(){
 		Scanner keyboard = new Scanner(System.in);
 		char choice = 0;
