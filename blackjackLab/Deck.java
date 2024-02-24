@@ -30,7 +30,7 @@ public class Deck{
 	}
 
    //accessors
-	public int size (){
+	public int size(){
 		return stackOfCards.size();
 	}
 
