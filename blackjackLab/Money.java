@@ -6,6 +6,5 @@ public class Money {
     }
 
     public void resetMoney(){
-        
     }
 }
