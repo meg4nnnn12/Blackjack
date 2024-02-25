@@ -21,7 +21,7 @@ public class Dealer extends Player{
 	}
 
 	public BlackJackCard deal(){
-	   return null;
+	   return stackOfCards.nextCard();
 	}
 	
 	public int numCardsLeftInDeck(){
