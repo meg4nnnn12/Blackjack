@@ -1,11 +1,12 @@
 public class Money {
-    private int money; 
+    private int playerMoney; 
+    private int dealerMoney;
 
     public Money(){
-        money = 100;
+        playerMoney = 100;
     }
 
     public void win(){
-        
+
     }
 }
