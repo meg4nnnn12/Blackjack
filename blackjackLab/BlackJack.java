@@ -80,7 +80,8 @@ public class BlackJack{
 
 			while (dealer.getHandValue() <= 18 && dealer.getHandValue() < 21){
 				if (player.getHandValue() > dealer.getHandValue()){
-
+					System.out.println("You win!");
+					//money.win();
 				}
 			}
 

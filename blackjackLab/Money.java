@@ -5,7 +5,7 @@ public class Money {
         money = 100;
     }
 
-    public void resetMoney(){
+    public void win(){
         
     }
 }
