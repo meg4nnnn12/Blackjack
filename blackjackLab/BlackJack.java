@@ -81,18 +81,18 @@ public class BlackJack{
 			while (dealer.getHandValue() <= 18 && dealer.getHandValue() < 21){
 				if (player.getHandValue() > dealer.getHandValue()){
 					System.out.println("You win!");
-					//money.win();
+					//money.gameWon();
 				}
 			}
 
 			while (dealer.getHandValue() == 21){
-				//money.win();
+				//money.gameWon();
 				System.out.println("Dealer wins...");
 			}
 
 			if (dealer.getHandValue() > 21 && player.getHandValue() <= 21){
 				System.out.println("You win!");
-				// money.win();
+				// money.gameWon();
 			}
 
 			System.out.println("Do you want to play again? (Yes/No)");

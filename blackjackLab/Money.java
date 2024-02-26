@@ -6,7 +6,7 @@ public class Money {
         playerMoney = 100;
     }
 
-    public void win(){
-
+    public void gameWon(){
+        
     }
 }

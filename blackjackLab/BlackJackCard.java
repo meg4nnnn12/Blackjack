@@ -11,8 +11,7 @@ public class BlackJackCard extends Card{
 		this.faceIndex = super.faceIndex;
 	}
 
-	public int getValue()
-  	{
+	public int getValue(){
   		//enables you to build the value for the game into the card
   		//this makes writing the whole program a little easier
 		if (faceIndex % 13 == 0)
@@ -22,5 +21,4 @@ public class BlackJackCard extends Card{
 		}
 		else return faceIndex + 1;
   	}
-  	
  }
