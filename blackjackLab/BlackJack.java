@@ -21,7 +21,6 @@ public class BlackJack{
 	}
 	public static void main(String[] args){    //main game 
 		Scanner keyboard = new Scanner(System.in);
-		// BlackJack game = new BlackJack();
 		Player player = new Player();
 		Dealer dealer = new Dealer();
 		Money money = new Money();
@@ -29,16 +28,16 @@ public class BlackJack{
 		player.addCardToHand(dealer.deal());
 		player.addCardToHand(dealer.deal());
 
-		out.println("\n\n Your hand: ");
-		out.println(player);
+		out.println("Your hand: ");
+		out.println(player.showHand());
 
-		out.println("\n\n handValue");
+		out.println("\nHandValue:");
 		out.println(player.getHandValue());
 
 		dealer.addCardToHand(dealer.deal());
 
-		out.println("\n\n Dealer's hand: ");
-		out.println(dealer);
+		out.println("\n\nDealer's hand: ");
+		out.println(dealer.showHand());
 		dealer.addCardToHand(dealer.deal());
 
 		boolean done = false;
@@ -60,13 +59,11 @@ public class BlackJack{
 			}
 
 			if (player.getHandValue() > 21){
-				System.out.println("\n\n Dealer's hand: ");
-				System.out.println("\n\n");
-				out.println(dealer);
+				System.out.println("\n Dealer's hand: ");
+				out.println(dealer.showHand());
 				System.out.println("\n\n You lose...");
-				System.out.println("\n\n Your hand: ");
-				System.out.println("\n\n");
-				out.println(player);
+				System.out.println("\n Your hand: ");
+				out.println(player.showHand());
 				money.gameLost();
 			}
 
@@ -78,7 +75,7 @@ public class BlackJack{
 			while (dealer.getHandValue() <= 17){
 				dealer.addCardToHand(dealer.deal());
 				System.out.println("Dealer's hand: ");
-				out.println(dealer);
+				out.println(dealer.showHand());
 			}
 
 			while (dealer.getHandValue() <= 18 && dealer.getHandValue() < 21){

@@ -24,8 +24,8 @@ public class Player{
       hand.clear();
    }
 
-   public void setWinCount(int numwins){
-
+   public ArrayList showHand(){
+      return hand;
    }
 
    public int getHandSize(){
@@ -37,7 +37,7 @@ public class Player{
       for (BlackJackCard myCard : hand){
          total += myCard.getValue();
       }
-      System.out.println("Total = " + total);
+      // System.out.println("Total = " + total);
       return total;
    }
 

@@ -21,7 +21,6 @@ public class Deck{
 		}
 	}
 
-	//modifiers
    public void shuffle(){
 		if (topCardIndex < 26){  //if the deck is halfway through
 			Collections.shuffle(stackOfCards);  //shuffle the deck
