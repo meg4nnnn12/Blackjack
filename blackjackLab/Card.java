@@ -18,10 +18,6 @@ public class Card{
 		suitIndex = cardNum / 13;
 	}
 
-	//modifiers
-
-  	//accessors
-
 	public String getSuit(){
 		return SUITS [suitIndex];
 	}

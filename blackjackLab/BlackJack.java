@@ -1,25 +1,15 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
-//Date -
+//Name - Megan Cheng
+//Date - 
 
 import static java.lang.System.*;
 import java.util.Scanner;
 
 public class BlackJack{
-// 	private Player player;  //add in Player instance variable
-// 	private Dealer dealer;  //add in Dealer instance variable
-// 	private Money money; 	//add in Money instance variable 
-
-	// public BlackJack(){
-	// 	player = new Player();
-	// 	dealer = new Dealer();
-	// 	money = new Money();
-	// }
-
-	public void initializeGame(){
+	public void initializeGame(){    //prints out rules and regulations of the game 
 		System.out.println("Welcome to Blackjack!");
-		System.out.println("");
+		System.out.println("\n");
 		System.out.println("  BLACKJACK RULES: ");
 		System.out.println("Each player is dealt 2 cards. The dealer is dealt 2 cards with one face-up and one face-down.");
 		System.out.println("Cards are equal to their value with face cards being 10 and an Ace being 1 or 11.");
@@ -29,7 +19,7 @@ public class BlackJack{
 		System.out.println("The goal is to have a higher card total than the dealer without going over 21.");
 		System.out.println("Players win their bet if they beat the dealer. Players win 1.5x their bet if they get “Blackjack” which is 21.");
 	}
-	public static void main(String[] args){
+	public static void main(String[] args){    //main game 
 		Scanner keyboard = new Scanner(System.in);
 		// BlackJack game = new BlackJack();
 		Player player = new Player();
@@ -54,7 +44,7 @@ public class BlackJack{
 		boolean done = false;
 		boolean playAgain = true;
 
-		while (playAgain){
+		while (playAgain == true){
 			while (player.getHandValue() < 21 && !done){
 				System.out.println("Do you want to hit? (Yes/No)");
 				String letter = keyboard.next();
@@ -77,11 +67,12 @@ public class BlackJack{
 				System.out.println("\n\n Your hand: ");
 				System.out.println("\n\n");
 				out.println(player);
+				money.gameLost();
 			}
 
 			if (player.getHandValue() == 21){
 				System.out.println("Blackjack! You win!");
-				//money.naturalWin;
+				money.naturalWin();
 			}
 
 			while (dealer.getHandValue() <= 17){
@@ -93,18 +84,18 @@ public class BlackJack{
 			while (dealer.getHandValue() <= 18 && dealer.getHandValue() < 21){
 				if (player.getHandValue() > dealer.getHandValue()){
 					System.out.println("You win!");
-					//money.gameWon();
+					money.gameWon();
 				}
 			}
 
 			while (dealer.getHandValue() == 21){
-				//money.gameWon();
+				money.gameWon();
 				System.out.println("Dealer wins...");
 			}
 
 			if (dealer.getHandValue() > 21 && player.getHandValue() <= 21){
 				System.out.println("You win!");
-				// money.gameWon();
+				money.gameWon();
 			}
 
 			System.out.println("Do you want to play again? (Yes/No)");
