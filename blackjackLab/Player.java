@@ -9,13 +9,14 @@ public class Player{
    private ArrayList<BlackJackCard> hand;
 
    public Player(){
-   }
-
-   public Player (int money){
       hand = new ArrayList<BlackJackCard>();  //creates array list of cards
    }
 
-   public void addCardToHand(BlackJackCard temp){  //add temp card to the array list
+   // public Player (int money){
+   //    hand = new ArrayList<BlackJackCard>();  //creates array list of cards
+   // }
+
+   public void addCardToHand(BlackJackCard temp){  //add temporary card to the array list
       hand.add(temp);
    }
 
