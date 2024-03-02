@@ -27,11 +27,13 @@ public class DealerTestOne{
 		out.println("\nPLAYER ");
 		out.println("Hand Value :: " + playerTotal );
 		out.println("Hand Size :: " + player.getHandSize() );
-		out.println("Cards in Hand :: " + player.toString() );
+		// out.println("Cards in Hand :: " + player.toString() );
+		out.println("Cards in Hand :: " + player.showHand());
 		out.println("\nDEALER ");
 		out.println("Hand Value :: " + dealerTotal );
 		out.println("Hand Size :: " + dealer.getHandSize() );
-		out.println("Cards in Hand :: " + dealer.toString() );
+		// out.println("Cards in Hand :: " + dealer.toString() );
+		out.println("Cards in Hand :: " + dealer.showHand());
 		
 		if(playerTotal > 21 && dealerTotal <= 21)
 		{

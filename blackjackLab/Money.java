@@ -12,7 +12,7 @@ public class Money {
 
     public boolean makeBet(){    //asking the player to make a bet
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("You have $" + returnPlayerMoney());
+        System.out.println("\nYou have $" + returnPlayerMoney());
         System.out.println("How much money would you like to bet?");
         playerBet = keyboard.nextInt();
 
