@@ -11,8 +11,7 @@ public class Dealer extends Player{
 	//private int topCardIndex;
 	private Deck stackOfCards; //define a deck of cards
 
-	public Dealer(){
-		//topCardIndex = 51; //initialize data -> stackOfCards - topCardIndex
+	public Dealer(){   //constructor
 		stackOfCards = new Deck();
 	}
 
@@ -20,17 +19,9 @@ public class Dealer extends Player{
 		stackOfCards.shuffle();
 	}
 
-	public BlackJackCard deal(){
+	public BlackJackCard deal(){   //used with addCardtoHand to deal out cards
 	   return stackOfCards.nextCard();
 	}
-	
-	public int numCardsLeftInDeck(){
-		return 0;
-	}
-
-	public boolean hit(){
-		return false;
-    }
 }
 
 

@@ -35,11 +35,11 @@ public class Money {
         playerBet = 0;
     }
 
-    public int returnPlayerMoney(){
+    public int returnPlayerMoney(){   //returns the amount of money the player currently has
         return (playerMoney);
     }
 
-    public int returnPlayerBet(){
+    public int returnPlayerBet(){     //returns the amount of money the player bet
         return (playerBet);
     }
 }

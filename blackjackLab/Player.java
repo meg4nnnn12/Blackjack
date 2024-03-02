@@ -20,15 +20,15 @@ public class Player{
       hand.add(temp);
    }
 
-   public void resetHand(){
+   public void resetHand(){  //resets the player's hand (for a new game)
       hand.clear();
    }
 
-   public ArrayList showHand(){
+   public ArrayList showHand(){ //returns all the cards and their values in the player's hand
       return hand;
    }
 
-   public int getHandSize(){
+   public int getHandSize(){    //returns the number of cards the player has in their hand right now
       return hand.size(); 
    }
 
@@ -37,12 +37,7 @@ public class Player{
       for (BlackJackCard myCard : hand){
          total += myCard.getValue();
       }
-      // System.out.println("Total = " + total);
       return total;
-   }
-
-   public boolean hit(){
-      return false;
    }
 
    public String toString(){

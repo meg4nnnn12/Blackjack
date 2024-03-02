@@ -11,7 +11,7 @@ public class Deck{
 	private int topCardIndex;
 	public ArrayList<BlackJackCard> stackOfCards;
 
-	public Deck (){ 
+	public Deck (){   //constructor
 		topCardIndex = 51; //initialize data - stackOfCards - topCardIndex
 		stackOfCards = new ArrayList<>();
 		
@@ -21,7 +21,7 @@ public class Deck{
 		shuffle();
 	}
 
-   public void shuffle(){
+   public void shuffle(){   //shuffles the deck
 		// if (topCardIndex < 26){  //if the deck is halfway through
 		//  	Collections.shuffle(stackOfCards);  //shuffle the deck
 		// 	topCardIndex = 51;
@@ -29,13 +29,12 @@ public class Deck{
 		 Collections.shuffle(stackOfCards);
 	}
 
-	public int size(){
+	public int size(){   //returns the size of the ArrayList
 		return stackOfCards.size();
 	}
 
-	public int numCardsLeft(){
+	public int numCardsLeft(){   //checks how many cards are left in the deck
 		return (stackOfCards.size() - topCardIndex);
-		// return (topCardIndex + 1);
 	}
 
 	public BlackJackCard nextCard(){

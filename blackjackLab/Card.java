@@ -18,15 +18,15 @@ public class Card{
 		suitIndex = cardNum / 13;
 	}
 
-	public String getSuit(){
+	public String getSuit(){  //returns the suit for the card
 		return SUITS [suitIndex];
 	}
 
-	public int getValue(){
+	public int getValue(){   //returns the value for the card
 		return faceIndex + 1;
 	}
 
-	public String getFace(){
+	public String getFace(){   //returns the face for the card
 		return FACES [faceIndex];
 	}
  
