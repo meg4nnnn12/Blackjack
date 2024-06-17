@@ -23,7 +23,7 @@ public class BlackJack{
 		System.out.println("Dealer 'Hits' until they equal or exceed 17.");
 		System.out.println("The goal is to have a higher card total than the dealer without going over 21.");
 		System.out.println("Players win their bet if they beat the dealer. Players win 1.5x their bet if they get “Blackjack” which is 21.");
-		System.out.println("Press 'y' for yes and 'no' for no when you recieve a prompt!");
+		System.out.println("Press 'y' for yes and 'n' for no when you recieve a prompt!");
 
 		boolean done = false;    //boolean that changes to true when the player is done taking cards (decides to stand)
 		boolean playAgain = true;   //restarts round
