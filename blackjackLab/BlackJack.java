@@ -7,6 +7,7 @@ import static java.lang.System.*;
 import java.util.Scanner;
 
 public class BlackJack{
+	public static int totalMoney;
 	public static void main(String[] args){    //main game 
 		Scanner keyboard = new Scanner(System.in);
 		Player player = new Player();
@@ -38,6 +39,7 @@ public class BlackJack{
 			System.out.println(player.showHand());
 			System.out.println("Hand Value:");
 			System.out.println(player.getHandValue());
+			// System.out.println(totalMoney);
 
 			dealer.addCardToHand(dealer.deal());   //dealer is dealt one card (face up) first
 
@@ -48,15 +50,20 @@ public class BlackJack{
 
 			dealer.addCardToHand(dealer.deal());   //the second card the dealer is dealt cannot be seen by the player 
 
-			while (player.getHandValue() < 21 && !done){   //checks if the player has a hand value of less than 21, if they do, they can choose to hit or stand 
+			totalMoney = player.getHandValue();
+
+			//while (player.getHandValue() < 21 && !done){   //checks if the player has a hand value of less than 21, if they do, they can choose to hit or stand 
+			while (totalMoney < 21 && !done){
 				System.out.println("\nDo you want to hit?");
 				String letter = keyboard.next();
 				if (letter.charAt(0) == 'y' || letter.charAt(0) == 'Y'){   //if the player chooses to hit 
 					player.addCardToHand(dealer.deal());
 					System.out.println("\nYour hand: "); 
 					System.out.println(player.showHand());
+					totalMoney = player.getHandValue();
 					System.out.println("Hand Value:");
-					System.out.println(player.getHandValue());
+					// System.out.println(player.getHandValue());
+					System.err.println(totalMoney);
 				}
 				else{   //if the player chooses to stand
 					done = true;
@@ -67,6 +74,10 @@ public class BlackJack{
 				}
 			}
 
+			if (totalMoney > 21 && player.checkForAce() == true){
+				totalMoney -= 10;
+			}
+
 			while (dealer.getHandValue() < 17){    //if the dealer has a hand less than 17, they have to continue to take cards
 				dealer.addCardToHand(dealer.deal());
 				System.out.println("Dealer's hand: ");
@@ -75,7 +86,8 @@ public class BlackJack{
 				System.out.println(dealer.getHandValue());
 			}
 
-			if (player.getHandValue() > 21){   //a player is "busted" if their hand is more than 21
+			// if (player.getHandValue() > 21){   //a player is "busted" if their hand is more than 21
+			if (totalMoney > 21){
 				System.out.println("\n\nBusted! You lose...");
 				System.out.println("\nDealer's hand: ");
 				System.out.println(dealer.showHand());
@@ -84,13 +96,15 @@ public class BlackJack{
 				System.out.println("\nYour hand: ");
 				System.out.println(player.showHand());
 				System.out.println("HandValue:");
-				System.out.println(player.getHandValue());
+				// System.out.println(player.getHandValue());
+				System.out.println(totalMoney);
 				money.gameLost();
 				System.out.println("\nMoney left:");
 				System.out.println(money.returnPlayerMoney());
 			}
 
-			if (player.getHandValue() == 21){   //if the player has a hand of exactly 21, they win automatically
+			// if (player.getHandValue() == 21){   //if the player has a hand of exactly 21, they win automatically
+			if (totalMoney == 21){
 				System.out.println("\n\nBlackjack! You win!");
 				System.out.println("\nDealer's hand");
 				System.out.println(dealer.showHand());
@@ -99,14 +113,17 @@ public class BlackJack{
 				System.out.println("\nYour hand: ");
 				System.out.println(player.showHand());
 				System.out.println("\nHand Value:");
-				System.out.println(player.getHandValue());
+				// System.out.println(player.getHandValue());
+				System.out.println(totalMoney);
 				money.naturalWin();
 				System.out.println("\nMoney left:");
 				System.out.println(money.returnPlayerMoney());
 			}
 
-			if (dealer.getHandValue() >= 18 && dealer.getHandValue() < 21 && player.getHandValue() <= 21){  //checking if the dealer has more than 17 in their hand(so they can't take more cards) and that the player has a hand less than or equal to 21
-				if (player.getHandValue() > dealer.getHandValue()){  //if the player has more than the dealer, the player wins
+			// if (dealer.getHandValue() >= 18 && dealer.getHandValue() < 21 && player.getHandValue() <= 21){  //checking if the dealer has more than 17 in their hand(so they can't take more cards) and that the player has a hand less than or equal to 21
+			if (dealer.getHandValue() >= 18 && dealer.getHandValue() < 21 && totalMoney <= 21){
+				// if (player.getHandValue() > dealer.getHandValue()){  //if the player has more than the dealer, the player wins
+				if (totalMoney > dealer.getHandValue()){
 					System.out.println("You win!!");
 					money.gameWon();
 					System.out.println("\nMoney left:");
@@ -121,13 +138,14 @@ public class BlackJack{
 				System.out.println(money.returnPlayerMoney());
 			}
 
-			if (dealer.getHandValue() > 21 && player.getHandValue() <= 21){   //if the dealer is busted and the player has less or equal to 21, the player wins
+			// if (dealer.getHandValue() > 21 && player.getHandValue() <= 21){   //if the dealer is busted and the player has less or equal to 21, the player wins
+			if (dealer.getHandValue() > 21 && totalMoney <= 21){ 
 				System.out.println("You win!!!");
 				money.gameWon();
 				System.out.println("\nMoney left:");
 				System.out.println(money.returnPlayerMoney());
 			}
-			
+
 			System.out.println("\nDo you want to play again?");  //asking the player if they want to play again
 			String letter = keyboard.next();
 			if (letter.charAt(0) == 'y' || letter.charAt(0) == 'Y'){    //yes

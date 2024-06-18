@@ -6,10 +6,13 @@
 import java.util.*;
 
 public class Player{
-   private ArrayList<BlackJackCard> hand;
+   public ArrayList<BlackJackCard> hand;
+
+   // public int total;
 
    public Player(){
       hand = new ArrayList<BlackJackCard>();  //creates array list of cards
+      // total = 0;
    }
 
    // public Player (int money){
@@ -38,6 +41,15 @@ public class Player{
          total += myCard.getValue();
       }
       return total;
+   }
+
+   public boolean checkForAce(){
+      for (BlackJackCard myCard : hand){
+         if (myCard.faceIndex % 13 == 0){
+            return true;
+         }
+      }
+      return false;
    }
 
    public String toString(){
