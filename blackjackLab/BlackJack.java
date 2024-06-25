@@ -112,6 +112,12 @@ public class BlackJack{
 					System.out.println("\nMoney left:");
 					System.out.println(money.returnPlayerMoney());
 				}
+				else if (dealer.getHandValue() > player.getHandValue()){
+					System.out.println("Dealer wins...");
+					money.gameLost();
+					System.out.println("\nMoney left:");
+					System.out.println(money.returnPlayerMoney());
+				}
 			}
 
 			if (dealer.getHandValue() == 21){   //if the dealer gets a blackjack, they automatically win
